@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import NFTViewSet
+from .views import NFTViewSet, UserAPIView
 
 urlpatterns = [
     path("nfts", NFTViewSet.as_view({"get": "list", "post": "create"})),
@@ -13,4 +13,5 @@ urlpatterns = [
             }
         ),
     ),
+    path('user', UserAPIView.as_view())
 ]
